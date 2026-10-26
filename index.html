@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بنبن.sumer</title>
+    <style>
+        /* ===== Generated Design Styles ===== */
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: "Arial", Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; }
+        .sketch-canvas { max-width: 1100px; width: 100%; margin: 0 auto; overflow-x: hidden; }
+        .sketch-canvas img { max-width: 100%; }
+        #quiz_1792974055981 { background-color: #ffffff; padding: 40px 20px; text-align: center; font-family: "Arial", Arial; }
+        #quiz_1792974055981 .quiz-inner { max-width: 520px; margin: 0 auto; }
+        #quiz_1792974055981 .quiz-timer { color: #e53935; font-weight: 700; font-size: 18px; margin-bottom: 12px; }
+        #quiz_1792974055981 .quiz-progress { color: #000000; opacity: 0.6; font-size: 13px; margin-bottom: 8px; }
+        #quiz_1792974055981 .quiz-question { color: #000000; font-size: 20px; font-weight: 700; margin: 0 0 18px 0; line-height: 1.4; }
+        #quiz_1792974055981 .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        #quiz_1792974055981 .quiz-option { background-color: #f1f3f5; color: #222222; font-size: 15px; font-family: "Arial", Arial; border: 2px solid transparent; border-radius: 10px; padding: 14px 16px; cursor: pointer; text-align: center; transition: transform .12s ease; }
+        #quiz_1792974055981 .quiz-option:hover:not(:disabled) { transform: translateY(-2px); }
+        #quiz_1792974055981 .quiz-option:disabled { cursor: default; }
+        #quiz_1792974055981 .quiz-option.correct { border-color: #2e7d32; background-color: #2e7d32; color: #ffffff; }
+        #quiz_1792974055981 .quiz-option.wrong { border-color: #b71c1c; opacity: 0.7; }
+        #quiz_1792974055981 .quiz-result { display: none; margin-top: 20px; padding: 18px; border-radius: 10px; }
+        #quiz_1792974055981 .quiz-result.show { display: block; }
+        #quiz_1792974055981 .quiz-result.lose { background-color: #fdecea; color: #b71c1c; }
+        #quiz_1792974055981 .quiz-result.win { background-color: #e8f5e9; color: #2e7d32; }
+        #quiz_1792974055981 .quiz-result h3 { margin: 0 0 6px 0; }
+        #quiz_1792974055981 .quiz-result p { margin: 0 0 12px 0; }
+        #quiz_1792974055981 .quiz-retry { padding: 10px 22px; border: none; border-radius: 8px; background-color: #b71c1c; color: #ffffff; font-weight: 600; cursor: pointer; font-family: "Arial", Arial; }
+        #slider_1792975169586 { background-color: #ffffff; padding: 20px 12px; font-family: "Arial", Arial; }
+        #slider_1792975169586 .sl-wrap { position: relative; max-width: 900px; margin: 0 auto; overflow: hidden; border-radius: 20px; height: 260px; background: rgba(0,0,0,0.05); }
+        #slider_1792975169586 .sl-track { display: flex; height: 100%; transition: transform 0.45s ease; }
+        #slider_1792975169586 .sl-slide { flex: 0 0 100%; height: 100%; }
+        #slider_1792975169586 .sl-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        #slider_1792975169586 .sl-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; border: none; cursor: pointer; padding: 8px 14px; min-width: 36px; background-color: #1565c0; color: #ffffff; font-family: "Arial", Arial; font-size: 14px; font-weight: 400; font-style: normal; text-decoration: none; border-radius: 6px; }
+        #slider_1792975169586 .sl-prev { left: 10px; }
+        #slider_1792975169586 .sl-next { right: 10px; }
+        #slider_1792975169586 .sl-dots { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; z-index: 2; }
+        #slider_1792975169586 .sl-dot { display: inline-block; width: 9px; height: 9px; margin: 0 4px; border-radius: 50%; background: rgba(255,255,255,0.55); cursor: pointer; border: 1px solid rgba(0,0,0,0.25); }
+        #slider_1792975169586 .sl-dot.active { background: #1565c0; }
+        #store_1792975276621 { background-color: #ffffff; padding: 44px 20px; }
+        #store_1792975276621 .store-search { display: block; width: 100%; max-width: 420px; margin: 0 auto 24px; padding: 12px 14px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; font-family: Arial; box-sizing: border-box; }
+        #store_1792975276621 .store-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+        #store_1792975276621 .store-card { background-color: #f7f7f7; border-radius: 10px; padding: 14px; cursor: pointer; box-sizing: border-box; transition: transform .2s ease; }
+        #store_1792975276621 .store-card:hover { transform: translateY(-3px); }
+        #store_1792975276621 .store-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 6px; margin-bottom: 10px; background: #e0e0e0; }
+        #store_1792975276621 .store-title { color: #000000; font-size: 15px; font-family: Arial; font-weight: 600; margin-bottom: 4px; }
+        #store_1792975276621 .store-price { color: #e53935; font-size: 14px; font-family: Arial; font-weight: 600; margin-bottom: 6px; }
+        #store_1792975276621 .store-desc-short { color: #555555; font-size: 12px; font-family: Arial; margin: 0; line-height: 1.4; }
+        #store_1792975276621 .store-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+        #store_1792975276621 .store-modal.open { display: flex; }
+        #store_1792975276621 .store-modal-inner { background: #ffffff; border-radius: 10px; max-width: 480px; width: 100%; max-height: 90vh; overflow-y: auto; box-sizing: border-box; padding: 20px 22px 26px; position: relative; text-align: center; font-family: Arial; }
+        #store_1792975276621 .store-modal-close { position: absolute; top: 10px; right: 14px; z-index: 2; cursor: pointer; font-size: 22px; color: #ffffff; background: rgba(0,0,0,0.45); width: 30px; height: 30px; border-radius: 50%; line-height: 30px; text-align: center; }
+        #store_1792975276621 .store-modal-img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; max-height: 55vh; object-fit: cover; border-radius: 8px; margin: 0 0 16px 0; background: #e0e0e0; }
+        #store_1792975276621 .store-modal-img.no-img { display: none; }
+        #store_1792975276621 .store-modal-title { color: #000000; font-size: 18px; font-weight: 700; margin: 0 0 6px 0; }
+        #store_1792975276621 .store-modal-price { color: #e53935; font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+        #store_1792975276621 .store-modal-desc { color: #555555; font-size: 13px; line-height: 1.6; margin: 0 0 16px 0; }
+        #store_1792975276621 .store-modal-btn { display: inline-block; padding: 11px 24px; border-radius: 6px; background-color: #1565c0; color: #ffffff; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="sketch-canvas">
+        <section id="quiz_1792974055981" class="quiz-section" data-seconds="15">
+            <div class="quiz-inner">
+                <div class="quiz-timer"></div>
+                <div class="quiz-q" data-correct="0">
+                    <h2 class="quiz-question">Write your question here?</h2>
+                    <div class="quiz-options">
+                        <button type="button" class="quiz-option" data-index="0">Option A</button>
+                        <button type="button" class="quiz-option" data-index="1">Option B</button>
+                        <button type="button" class="quiz-option" data-index="2">Option C</button>
+                        <button type="button" class="quiz-option" data-index="3">Option D</button>
+                    </div>
+                </div>
+                <div class="quiz-result">
+                    <h3></h3>
+                    <p></p>
+                    <button type="button" class="quiz-retry">Try again</button>
+                </div>
+            </div>
+        </section>
+        <section id="slider_1792975169586" class="slider-section">
+            <div class="sl-wrap">
+                <div class="sl-track">
+                    <div class="sl-slide"><img src="images/image_1.jpg" alt="" /></div>
+                    <div class="sl-slide"><img src="images/image_2.jpg" alt="" /></div>
+                    <div class="sl-slide"><img src="images/image_3.jpg" alt="" /></div>
+                    <div class="sl-slide"><img src="images/image_4.jpg" alt="" /></div>
+                </div>
+                <button type="button" class="sl-btn sl-prev">Prev</button>
+                <button type="button" class="sl-btn sl-next">Next</button>
+                <div class="sl-dots">
+                    <span class="sl-dot"></span>
+                    <span class="sl-dot"></span>
+                    <span class="sl-dot"></span>
+                    <span class="sl-dot"></span>
+                </div>
+            </div>
+        </section>
+        <section id="store_1792975276621" class="store-section">
+            <input type="text" class="store-search" placeholder="Search products..." />
+            <div class="store-grid">
+                <div class="store-card" style="background-color: #f7f7f7;" data-name="Product One" data-price="$19.99" data-desc="A short product description." data-img="images/image_5.jpg" data-btntext="Order Now" data-url="https://">
+                    <img src="images/image_5.jpg" alt="Product One" />
+                    <div class="store-title">Product One</div>
+                    <div class="store-price">$19.99</div>
+                    <p class="store-desc-short">A short product description.</p>
+                </div>
+            </div>
+            <div class="store-modal" id="store_1792975276621_modal">
+                <div class="store-modal-inner">
+                    <span class="store-modal-close">&times;</span>
+                    <img class="store-modal-img" alt="" />
+                    <h3 class="store-modal-title"></h3>
+                    <div class="store-modal-price"></div>
+                    <p class="store-modal-desc"></p>
+                    <a class="store-modal-btn" target="_blank" rel="noopener"></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        (function(){
+            var root = document.getElementById('quiz_1792974055981');
+            if (!root) return;
+            var MSG = { loseTitle: 'You lost!', loseMessage: 'Wrong answer or time ran out. Try again!', winTitle: 'Correct! Well done!' };
+            var total = parseInt(root.getAttribute('data-seconds'), 10) || 0;
+            var panels = root.querySelectorAll('.quiz-q');
+            if (!panels.length) return;
+            var timerEl = root.querySelector('.quiz-timer');
+            var progEl = root.querySelector('.quiz-progress');
+            var result = root.querySelector('.quiz-result');
+            var rTitle = result.querySelector('h3');
+            var rText = result.querySelector('p');
+            var retry = result.querySelector('.quiz-retry');
+            var cur = 0, left = 0, tick = null, locked = false;
+            function stop(){ if (tick) { clearInterval(tick); tick = null; } }
+            function opts(){ return panels[cur].querySelectorAll('.quiz-option'); }
+            function lock(){ locked = true; opts().forEach(function(o){ o.disabled = true; }); }
+            function revealCorrect(){
+                var c = parseInt(panels[cur].getAttribute('data-correct'), 10) || 0;
+                var o = opts()[c];
+                if (o) o.classList.add('correct');
+            }
+            function finish(kind, title, text){
+                stop(); lock();
+                result.className = 'quiz-result show ' + kind;
+                rTitle.textContent = title;
+                rText.textContent = text;
+                retry.style.display = kind === 'lose' ? '' : 'none';
+            }
+            function renderTimer(){ if (timerEl) timerEl.textContent = '⏱ ' + left + 's'; }
+            function startTimer(){
+                stop();
+                if (total <= 0) return;
+                left = total; renderTimer();
+                tick = setInterval(function(){
+                    left--; renderTimer();
+                    if (left <= 0) { revealCorrect(); finish('lose', MSG.loseTitle, MSG.loseMessage); }
+                }, 1000);
+            }
+            function show(i){
+                cur = i; locked = false;
+                result.className = 'quiz-result';
+                for (var k = 0; k < panels.length; k++) panels[k].style.display = (k === i) ? '' : 'none';
+                opts().forEach(function(o){ o.disabled = false; o.classList.remove('correct', 'wrong'); });
+                if (progEl) progEl.textContent = (i + 1) + ' / ' + panels.length;
+                startTimer();
+            }
+            Array.prototype.forEach.call(panels, function(p){
+                Array.prototype.forEach.call(p.querySelectorAll('.quiz-option'), function(o){
+                    o.addEventListener('click', function(){
+                        if (locked) return;
+                        var c = parseInt(p.getAttribute('data-correct'), 10) || 0;
+                        var i = parseInt(o.getAttribute('data-index'), 10);
+                        if (i === c) {
+                            o.classList.add('correct'); stop(); lock();
+                            if (cur + 1 < panels.length) {
+                                setTimeout(function(){ show(cur + 1); }, 700);
+                            } else {
+                                finish('win', MSG.winTitle, panels.length + ' / ' + panels.length);
+                            }
+                        } else {
+                            o.classList.add('wrong'); revealCorrect();
+                            finish('lose', MSG.loseTitle, MSG.loseMessage);
+                        }
+                    });
+                });
+            });
+            retry.addEventListener('click', function(){ show(0); });
+            show(0);
+        })();
+
+        (function(){
+            var root = document.getElementById('slider_1792975169586');
+            if (!root) return;
+            var track = root.querySelector('.sl-track');
+            var n = root.querySelectorAll('.sl-slide').length;
+            if (!track || n === 0) return;
+            var dots = root.querySelectorAll('.sl-dot');
+            var prev = root.querySelector('.sl-prev');
+            var next = root.querySelector('.sl-next');
+            var auto = false;
+            var delay = 3000;
+            var idx = 0, timer = null;
+            function show(i) {
+                idx = (i + n) % n;
+                track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+                for (var k = 0; k < dots.length; k++) dots[k].classList.toggle('active', k === idx);
+            }
+            function restart() {
+                if (timer) clearInterval(timer);
+                if (auto && n > 1) timer = setInterval(function(){ show(idx + 1); }, delay);
+            }
+            if (prev) prev.addEventListener('click', function(){ show(idx - 1); restart(); });
+            if (next) next.addEventListener('click', function(){ show(idx + 1); restart(); });
+            for (var d = 0; d < dots.length; d++) {
+                (function(k){ dots[k].addEventListener('click', function(){ show(k); restart(); }); })(d);
+            }
+            var sx = null;
+            root.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive: true});
+            root.addEventListener('touchend', function(e){
+                if (sx === null) return;
+                var dx = e.changedTouches[0].clientX - sx;
+                sx = null;
+                if (Math.abs(dx) > 40) { show(dx < 0 ? idx + 1 : idx - 1); restart(); }
+            });
+            show(0);
+            restart();
+        })();
+        (function(){
+            var root = document.getElementById('store_1792975276621');
+            if (!root) return;
+            var search = root.querySelector('.store-search');
+            var cards = root.querySelectorAll('.store-card');
+            var modal = document.getElementById('store_1792975276621_modal');
+            if (search) {
+                search.addEventListener('input', function(){
+                    var q = search.value.trim().toLowerCase();
+                    cards.forEach(function(card){
+                        var name = (card.getAttribute('data-name') || '').toLowerCase();
+                        card.style.display = name.indexOf(q) !== -1 ? '' : 'none';
+                    });
+                });
+            }
+            cards.forEach(function(card){
+                card.addEventListener('click', function(){
+                    if (!modal) return;
+                    var mImg = modal.querySelector('.store-modal-img'); var mSrc = card.getAttribute('data-img') || ''; mImg.alt = card.getAttribute('data-name') || ''; if (mSrc) { mImg.src = mSrc; mImg.classList.remove('no-img'); } else { mImg.removeAttribute('src'); mImg.classList.add('no-img'); }
+                    modal.querySelector('.store-modal-title').textContent = card.getAttribute('data-name') || '';
+                    modal.querySelector('.store-modal-price').textContent = card.getAttribute('data-price') || '';
+                    modal.querySelector('.store-modal-desc').textContent = card.getAttribute('data-desc') || '';
+                    var btn = modal.querySelector('.store-modal-btn');
+                    btn.textContent = card.getAttribute('data-btntext') || 'Order Now';
+                    btn.href = card.getAttribute('data-url') || '#';
+                    modal.classList.add('open');
+                });
+            });
+            if (modal) {
+                modal.querySelector('.store-modal-close').addEventListener('click', function(){
+                    modal.classList.remove('open');
+                });
+                modal.addEventListener('click', function(e){
+                    if (e.target === modal) modal.classList.remove('open');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
